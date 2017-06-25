@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lab 7 - Basic JavaScript Event Handling and DOM</title>
+    <style type="text/css">
+      .center {
+        text-align: center;
+      }
+      #container {
+        width: 400px;
+        margin: 50px auto 0;
+      }
+      #entryinput {
+       width: 100%;
+      }
+      #entrybutton {
+        width: 200px;
+        text-align: center;
+        color: #fff;
+        background-color: #c00;
+        padding: 2em 0;
+        margin: 20px auto;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="center">ITMD-361 - Lab 7 - Basic JavaScript Event Handling and DOM</h1>
+    <h2 class="center">Gary Zabinski</h2>
+    <h3 class="center">gzabinski@hawk.iit.edu</h3>
+    <div id="container">
+      <input id="entryinput" type="text" name="textentry" placeholder="Enter a Message">
+      <div id="entrybutton">Alert Me</div>
+      <h2 id="textoutput" class="center">Show results here</h2>
+    </div>
+    <script type="text/javascript">
+      /* get the handle to the entry button div */
+      var entryButtonHandle = document.getElementById("entrybutton");
+
+      /* add an event listener for clicks on this button */
+      /* run runit when the button is clicked */
+      entryButtonHandle.addEventListener("click", runit);
+      function runit(){
+
+        /* find the input text from the entry input form */
+        var inputtext = document.getElementById("entryinput").value;
+
+        /* overwrite the text in the textoutput area */
+        document.getElementById("textoutput").textContent = inputtext;
+
+        /* generate an alert pop up with the same text */
+        alert("Gary Zabinski: " + inputtext);
+      }
+    </script>
+  </body>
+</html>
